@@ -1,0 +1,16 @@
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Django stuff
+*.log
+*.pot
+db.sqlite3
+db.sqlite3-journal
+
+# If you are using Django migrations
+migrations/
+
+# exclude idea
+.idea
