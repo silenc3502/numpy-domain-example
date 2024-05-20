@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nlp_app',
+    'rest_framework',
+    'board',
 ]
 
 MIDDLEWARE = [
