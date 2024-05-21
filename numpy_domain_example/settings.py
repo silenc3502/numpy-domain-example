@@ -54,16 +54,24 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8080',
-    'http://127.0.0.1:8080',
-]
+import os
+from dotenv import load_dotenv
 
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:8080',
-]
+load_dotenv()
 
-APPEND_SLASH = False
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:8080',
+#     'http://127.0.0.1:8080',
+# ]
+#
+# CSRF_TRUSTED_ORIGINS = [
+#     'http://localhost:8080',
+# ]
+
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',')
+
+# APPEND_SLASH = False
 
 ROOT_URLCONF = 'numpy_domain_example.urls'
 
@@ -106,11 +114,6 @@ WSGI_APPLICATION = 'numpy_domain_example.wsgi.application'
 #         'PORT': '3306',        # 또는 MySQL 포트
 #     }
 # }
-
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 DATABASES = {
     'default': {
