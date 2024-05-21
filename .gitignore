@@ -14,3 +14,6 @@ migrations/
 
 # exclude idea
 .idea
+
+# exclude .env
+.env
